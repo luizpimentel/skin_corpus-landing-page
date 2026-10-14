@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
         <div className={`container ${styles.bottomContainer}`}>
           <p>© {new Date().getFullYear()} SkinCorpus — Clínica Médica e Estética. Todos os direitos reservados.</p>
           <p className={styles.legalInfo}>
-            As informações deste site têm caráter informativo e não substituem a consulta médica individualizada.
+            Desenvolvido por <a href='https://github.com/luizpimentel'>Luiz Felipe de Almeida</a>
           </p>
         </div>
       </div>
