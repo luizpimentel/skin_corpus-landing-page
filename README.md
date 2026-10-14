@@ -69,6 +69,9 @@ A base do backend em **Spring Boot + PostgreSQL** já se encontra 100% arquiteta
 
 ## 🚀 Como Executar o Projeto
 
+## 💻 Execução do Projeto no Vercel
+https://skin-corpus-landing-page.vercel.app/
+
 ### 1. Frontend (React + TypeScript)
 
 Requisitos: **Node.js 18+**
