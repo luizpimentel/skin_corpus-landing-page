@@ -1,7 +1,10 @@
 # SkinCorpus — Clínica Médica e Estética
 > Landing page premium responsiva e focada em conversão para a clínica médica **SkinCorpus** (Barra da Tijuca, Rio de Janeiro), desenvolvida em **React 19 + TypeScript (Vite)** e integrada a uma REST API em **Spring Boot 3 (Java) com persistência SQL**.
 
----
+## ⚙️ Arquitetura & Produtividade
+Toda a arquitetura do projeto foi desenhada visando escalabilidade e aderência às regras de negócio do ambiente médico (gestão de leads e fluxo de atendimento). 
+
+Foram aplicados padrões de projeto corporativos no backend (Repository Pattern, DTOs, MVC) e componentização modular no frontend. Para maximizar a produtividade e focar na resolução do problema de negócio em vez da digitação de código repetitivo (boilerplate), o ambiente de desenvolvimento foi integrado a ferramentas modernas de IA (Google Antigravity e ecossistema Gemini) atuando estritamente como code-assistants para refatoração e testes.
 
 ## 🏛️ Identidade Visual & Design System
 
@@ -60,7 +63,9 @@ landing_page/
         └── test/                        # Testes unitários e de integração WebMvc
 ```
 
----
+## 📊 Estratégia de MVP e Visão de Negócio
+Para validar o produto e gerar valor imediato para a clínica, o MVP (Minimum Viable Product) foi desenhado com foco na conversão direta via **API do WhatsApp**, acelerando a captação de pacientes. 
+A base do backend em **Spring Boot + PostgreSQL** já se encontra 100% arquitetada (Migrations, DTOs, Controllers, Tratamento de Exceções) para uma futura evolução, permitindo a criação rápida de um painel administrativo próprio de agendamentos sem a necessidade de refatoração do zero.
 
 ## 🚀 Como Executar o Projeto
 
