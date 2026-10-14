@@ -67,10 +67,10 @@ landing_page/
 Para validar o produto e gerar valor imediato para a clínica, o MVP (Minimum Viable Product) foi desenhado com foco na conversão direta via **API do WhatsApp**, acelerando a captação de pacientes. 
 A base do backend em **Spring Boot + PostgreSQL** já se encontra 100% arquitetada (Migrations, DTOs, Controllers, Tratamento de Exceções) para uma futura evolução, permitindo a criação rápida de um painel administrativo próprio de agendamentos sem a necessidade de refatoração do zero.
 
-## 🚀 Como Executar o Projeto
-
 ## 💻 Execução do Projeto no Vercel
 https://skin-corpus-landing-page.vercel.app/
+
+## 🚀 Como Executar o Projeto
 
 ### 1. Frontend (React + TypeScript)
 
