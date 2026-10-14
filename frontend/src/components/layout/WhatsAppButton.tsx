@@ -4,7 +4,7 @@ import styles from './WhatsAppButton.module.css';
 
 export const WhatsAppButton: React.FC = () => {
   const link = getWhatsAppLink(
-    'Olá! Gostaria de informações sobre agendamento de consultas na SkinCorpus Barra da Tijuca.'
+    'Olá! Gostaria de informações sobre agendamento de consultas na Skin Corpus Barra da Tijuca.'
   );
 
   return (
