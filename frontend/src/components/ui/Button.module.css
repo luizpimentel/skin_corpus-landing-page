@@ -1,0 +1,140 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Sizes */
+.sm {
+  padding: 0.45rem 1.1rem;
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+}
+
+.md {
+  padding: 0.75rem 1.75rem;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+}
+
+.lg {
+  padding: 0.95rem 2.25rem;
+  font-size: var(--text-base);
+  letter-spacing: 0.02em;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Primary Variant (Gold gradient) */
+.primary {
+  background: var(--gradient-gold);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(156, 122, 78, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--gradient-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(156, 122, 78, 0.42);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary Variant (Outlined gold) */
+.secondary {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold-dark);
+  border: 1.5px solid var(--color-gold-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(156, 122, 78, 0.08);
+  border-color: var(--color-gold-dark);
+  color: var(--color-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ghost Variant */
+.ghost {
+  background: transparent;
+  color: var(--color-gold-dark);
+  border: 1px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background: rgba(156, 122, 78, 0.08);
+  color: var(--color-gold-dark);
+}
+
+/* White Variant */
+.white {
+  background: #FFFFFF;
+  color: var(--color-gold-dark);
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-md);
+}
+
+.white:hover:not(:disabled) {
+  background: var(--color-bg-subtle);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* WhatsApp Variant */
+.whatsapp {
+  background: var(--color-whatsapp);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.whatsapp:hover:not(:disabled) {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.48);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

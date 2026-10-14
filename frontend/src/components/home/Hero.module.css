@@ -1,0 +1,179 @@
+.heroSection {
+  position: relative;
+  padding: var(--space-12) 0 var(--space-20);
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeWrapper {
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: clamp(2.35rem, 4.4vw, 3.85rem);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.subtitle {
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+  max-width: 580px;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-10);
+}
+
+.mainCta {
+  min-width: 220px;
+}
+
+.whatsappCta {
+  color: var(--color-gold-dark);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: var(--space-6);
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.checkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(156, 122, 78, 0.12);
+  color: var(--color-gold-dark);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Right Media: Hero Photo with Golden Border Frame */
+.heroMedia {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--radius-xl);
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(203, 167, 104, 0.35) 0%, rgba(156, 122, 78, 0.15) 100%);
+  box-shadow: 0 20px 50px rgba(90, 70, 40, 0.16);
+}
+
+.frameBorder {
+  position: absolute;
+  inset: -6px;
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: calc(var(--radius-xl) + 6px);
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-xl) - 4px);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+.floatingCard {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.floatingRole {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold-main);
+  font-weight: 600;
+}
+
+.floatingNames {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    text-align: center;
+  }
+
+  .heroContent {
+    align-items: center;
+  }
+
+  .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ctaGroup {
+    justify-content: center;
+  }
+
+  .highlights {
+    align-items: flex-start;
+    display: inline-flex;
+    margin: 0 auto;
+  }
+
+  .imageFrame {
+    max-width: 380px;
+  }
+}

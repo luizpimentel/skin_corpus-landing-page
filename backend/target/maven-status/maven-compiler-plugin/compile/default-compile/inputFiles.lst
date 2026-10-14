@@ -1,0 +1,10 @@
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\config\CorsConfig.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\controller\AppointmentController.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\dto\AppointmentRequest.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\dto\AppointmentResponse.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\exception\GlobalExceptionHandler.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\model\Appointment.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\model\AppointmentStatus.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\repository\AppointmentRepository.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\service\AppointmentService.java
+C:\Users\famil\OneDrive\Desktop\luizfelipe\Projetos\SkinCorpus\landing_page\backend\src\main\java\com\skincorpus\api\SkinCorpusApiApplication.java

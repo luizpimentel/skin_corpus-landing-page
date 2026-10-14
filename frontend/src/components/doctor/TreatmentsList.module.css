@@ -1,0 +1,19 @@
+.section {
+  padding: var(--space-20) 0;
+  background: var(--color-bg);
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

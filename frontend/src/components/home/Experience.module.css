@@ -1,0 +1,153 @@
+.section {
+  padding: var(--space-20) 0;
+  background: var(--color-bg-subtle);
+  border-top: 1px solid rgba(156, 122, 78, 0.12);
+  border-bottom: 1px solid rgba(156, 122, 78, 0.12);
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-family: var(--font-serif);
+  color: var(--color-text-primary);
+  margin: var(--space-3) 0 var(--space-4);
+  line-height: 1.15;
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.differentialsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.diffItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.diffIcon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(156, 122, 78, 0.25);
+  margin-top: 2px;
+}
+
+.diffTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.diffDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.ctaWrapper {
+  margin-top: var(--space-2);
+}
+
+/* Right Gallery with 3 Photos */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mainPhotoWrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.mainPhoto {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mainPhotoWrapper:hover .mainPhoto {
+  transform: scale(1.03);
+}
+
+.photoCaption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(26, 21, 16, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border: 1px solid rgba(203, 167, 104, 0.25);
+}
+
+.secondaryPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.subPhotoWrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: var(--shadow-md);
+  height: 170px;
+}
+
+.subPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.subPhotoWrapper:hover .subPhoto {
+  transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}

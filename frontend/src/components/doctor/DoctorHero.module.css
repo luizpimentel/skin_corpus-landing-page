@@ -1,0 +1,172 @@
+.hero {
+  padding: var(--space-8) 0 var(--space-16);
+  background: var(--color-bg);
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumb {
+  margin-bottom: var(--space-6);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--color-gold-dark);
+  font-weight: 500;
+  transition: transform var(--transition-fast);
+}
+
+.backLink:hover {
+  transform: translateX(-4px);
+  color: var(--color-gold-main);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.durationBadge {
+  font-size: var(--text-xs);
+  color: var(--color-gold-dark);
+  background: rgba(156, 122, 78, 0.1);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.title {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-family: var(--font-serif);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-2);
+}
+
+.specialty {
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  color: var(--color-gold-main);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.focus {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  max-width: 580px;
+}
+
+.educationBox {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.educationTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-3);
+}
+
+.educationList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.educationList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.bullet {
+  color: var(--color-gold-main);
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius-xl);
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(203, 167, 104, 0.35) 0%, rgba(156, 122, 78, 0.12) 100%);
+  box-shadow: var(--shadow-xl);
+}
+
+.borderEffect {
+  position: absolute;
+  inset: -6px;
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: calc(var(--radius-xl) + 6px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: calc(var(--radius-xl) - 4px);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .media {
+    order: -1;
+  }
+  .imageFrame {
+    max-width: 340px;
+  }
+  .image {
+    height: 400px;
+  }
+}
