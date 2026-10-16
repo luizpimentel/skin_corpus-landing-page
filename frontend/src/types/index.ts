@@ -105,7 +105,6 @@ export interface AppointmentResponse {
   preferredDate: string;
   preferredPeriod: string;
   message?: string;
-  status: 'PENDENTE' | 'CONFIRMADO' | 'CANCELADO';
   createdAt: string;
 }
 

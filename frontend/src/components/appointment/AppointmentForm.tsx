@@ -20,7 +20,6 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     errors,
     status,
     serverError,
-    createdAppointment,
     handleChange,
     handleSubmit,
     resetForm,
@@ -32,41 +31,39 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     },
   });
 
+  /* Puxa a data de hoje */
   const todayStr = new Date().toISOString().split('T')[0];
 
-  if (status === 'success' && createdAppointment) {
+  /* Formata a data para o padrão brasileiro (DD/MM/AAAA) */
+  const formatDateBR = (dateStr: string) => {
+    if (!dateStr) return '';
+    const [year, month, day] = dateStr.split('-');
+    return `${day}/${month}/${year}`;
+  };
+
+  if (status === 'success') {
     return (
       <div className={styles.successState}>
         <div className={styles.successBadge}>✓</div>
         <h3 className={styles.successTitle}>Solicitação Enviada com Sucesso!</h3>
         <p className={styles.successText}>
-          Olá, <strong>{createdAppointment.name}</strong>. Recebemos sua solicitação para{' '}
-          <strong>{createdAppointment.doctor === 'dra-fernanda-almeida' ? 'Dra. Fernanda Almeida' : 'Dr. Glauber Marinho'}</strong>{' '}
-          ({createdAppointment.interest}).
+          Olá, <strong>{values.name}</strong>. Recebemos sua solicitação para{' '}
+          <strong>{values.doctor === 'dra-fernanda-almeida' ? 'Dra. Fernanda Almeida' : 'Dr. Glauber Marinho'}</strong>{' '}
+          ({values.interest}).
         </p>
         <div className={styles.appointmentSummary}>
           <div className={styles.summaryItem}>
             <span>Data preferencial:</span>
-            <strong>{createdAppointment.preferredDate}</strong>
+            <strong>{formatDateBR(values.preferredDate)}</strong>
           </div>
           <div className={styles.summaryItem}>
             <span>Período:</span>
-            <strong>{createdAppointment.preferredPeriod === 'MANHA' ? 'Manhã' : 'Tarde'}</strong>
-          </div>
-          <div className={styles.summaryItem}>
-            <span>Status:</span>
-            <strong className={styles.statusPendente}>
-              {createdAppointment.status === 'PENDENTE'
-                ? 'Pendente'
-                : createdAppointment.status === 'CONFIRMADO'
-                  ? 'Confirmado'
-                  : 'Cancelado'}
-            </strong>
+            <strong>{values.preferredPeriod === 'MANHA' ? 'Manhã' : 'Tarde'}</strong>
           </div>
         </div>
         <p className={styles.successNote}>
           Nossa equipe de recepção da Barra da Tijuca entrará em contato pelo telefone{' '}
-          <strong>{createdAppointment.phone}</strong> para confirmar o horário exato da sua consulta.
+          <strong>{values.phone}</strong> para confirmar o horário exato da sua consulta.
         </p>
         <Button
           type="button"
@@ -152,7 +149,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
             }}
             className={`${styles.select} ${errors.doctor ? styles.inputError : ''}`}
           >
-            <option value="">Selecione o médico(a)...</option>
+            <option value="" disabled>Selecione o médico(a)...</option>
             <option value="dra-fernanda-almeida">Dra. Fernanda Almeida (Dermatologia Estética)</option>
             <option value="dr-glauber-marinho">Dr. Glauber Marinho (Endocrinologia & Hormônios)</option>
           </select>
@@ -169,30 +166,23 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
             onChange={(e) => handleChange('interest', e.target.value)}
             className={`${styles.select} ${errors.interest ? styles.inputError : ''}`}
           >
-            <option value="">Selecione a área de interesse...</option>
+            <option value="" disabled>Selecione a área de interesse...</option>
             {values.doctor === 'dra-fernanda-almeida' && (
               <>
-                <option value="Método D.E.R.M.A. (Avaliação Completa 2h)">Método D.E.R.M.A. (Avaliação Completa 2h)</option>
-                <option value="Ultraformer MPT (Ultrassom Microfocado)">Ultraformer MPT (Ultrassom Microfocado)</option>
+                <option value="Método D.E.R.M.A.">Método D.E.R.M.A.</option>
+                <option value="Ultraformer MPT">Ultraformer MPT</option>
                 <option value="Bioestimuladores de Colágeno">Bioestimuladores de Colágeno</option>
                 <option value="Toxina Botulínica Natural">Toxina Botulínica Natural</option>
                 <option value="Preenchimento com Ácido Hialurônico">Preenchimento com Ácido Hialurônico</option>
-                <option value="Laser Etherea (Manchas e Viço)">Laser Etherea (Manchas e Viço)</option>
+                <option value="Laser Etherea">Laser Etherea</option>
               </>
             )}
             {values.doctor === 'dr-glauber-marinho' && (
               <>
-                <option value="Protocolo Emagrecimento & Menopausa (Mulheres)">Protocolo Emagrecimento & Menopausa (Mulheres)</option>
+                <option value="Protocolo Emagrecimento & Menopausa">Protocolo Emagrecimento & Menopausa</option>
                 <option value="Protocolo Reposição Hormonal Masculina">Protocolo Reposição Hormonal Masculina</option>
                 <option value="Avaliação Metabólica e Nutrologia">Avaliação Metabólica e Nutrologia</option>
                 <option value="Terapia Combinada para Longevidade">Terapia Combinada para Longevidade</option>
-              </>
-            )}
-            {!values.doctor && (
-              <>
-                <option value="Rejuvenescimento Facial e Corporal">Rejuvenescimento Facial e Corporal</option>
-                <option value="Emagrecimento e Equilíbrio Hormonal">Emagrecimento e Equilíbrio Hormonal</option>
-                <option value="Primeira Consulta Diagnóstica">Primeira Consulta Diagnóstica</option>
               </>
             )}
           </select>

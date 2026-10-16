@@ -8,6 +8,18 @@ export async function createAppointment(
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 12000);
 
+  const emailPayload = {
+    'Nome Completo': data.name,
+    'E-mail': data.email,
+    'Telefone / WhatsApp': data.phone,
+    'Profissional': data.doctor,
+    'Área de Interesse': data.interest,
+    'Data Preferencial': data.preferredDate,
+    'Período': data.preferredPeriod,
+    'Mensagem / Observações': data.message || 'Nenhuma observação informada',
+    'Aceitou Termos LGPD': data.consent ? 'Sim' : 'Não',
+  };
+
   try {
     const response = await fetch(API_BASE_URL, {
       method: 'POST',
@@ -15,7 +27,7 @@ export async function createAppointment(
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(emailPayload),
       signal: controller.signal,
     });
 
@@ -26,7 +38,7 @@ export async function createAppointment(
       try {
         errorData = await response.json();
       } catch {
-        // Fallback for non-JSON response
+        // Fallback para resposta não JSON
       }
 
       const apiError: ApiError = {

@@ -26,6 +26,7 @@ interface UseAppointmentFormProps {
   onSuccess?: (appointment: AppointmentResponse) => void;
 }
 
+// Gerencia o estado do formulário e a lógica de submissão
 export function useAppointmentForm({
   initialDoctor = '',
   initialInterest = '',
@@ -48,7 +49,7 @@ export function useAppointmentForm({
   const [serverError, setServerError] = useState<string | null>(null);
   const [createdAppointment, setCreatedAppointment] = useState<AppointmentResponse | null>(null);
 
-  // Sync initial values when they change externally (e.g. CTA click)
+  // Sincroniza valores iniciais quando eles mudam externamente (ex: clique CTA)
   useEffect(() => {
     if (initialDoctor) {
       setValues((prev) => ({ ...prev, doctor: initialDoctor }));
@@ -73,7 +74,7 @@ export function useAppointmentForm({
         [field]: formattedValue,
       }));
 
-      // Clear field error on change
+      // Limpa erro quando começa a digitar
       if (errors[field]) {
         setErrors((prev) => {
           const next = { ...prev };
@@ -133,6 +134,12 @@ export function useAppointmentForm({
     return Object.keys(newErrors).length === 0;
   };
 
+  const DOCTOR_NAME: Record<string, string> = {
+    'dra-fernanda-almeida': 'Dra. Fernanda Almeida',
+    'dr-glauber-marinho': 'Dr. Glauber Marinho',
+  };
+
+  // Envia o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setServerError(null);
@@ -144,14 +151,18 @@ export function useAppointmentForm({
     setStatus('submitting');
 
     try {
+      const doctorName = DOCTOR_NAME[values.doctor] || values.doctor;
+      const formattedPeriod = values.preferredPeriod === 'MANHA' ? 'Manhã' : 'Tarde';
+      const formattedDate = values.preferredDate ? values.preferredDate.split('-').reverse().join('/') : values.preferredDate;
+
       const response = await createAppointment({
         name: values.name.trim(),
         email: values.email.trim(),
         phone: values.phone.trim(),
-        doctor: values.doctor,
+        doctor: doctorName,
         interest: values.interest.trim(),
-        preferredDate: values.preferredDate,
-        preferredPeriod: values.preferredPeriod,
+        preferredDate: formattedDate,
+        preferredPeriod: formattedPeriod,
         message: values.message.trim() || undefined,
         consent: values.consent,
       });

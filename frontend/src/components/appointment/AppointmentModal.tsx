@@ -13,7 +13,7 @@ export const AppointmentModal: React.FC = () => {
       onClose={closeAppointment}
       title="Agende sua Consulta Exclusiva"
       subtitle="Preencha o formulário e nossa equipe médica entrará em contato para alinhar os detalhes."
-      maxWidth="680px"
+      maxWidth="800px"
     >
       <AppointmentForm
         initialDoctor={selectedDoctor}

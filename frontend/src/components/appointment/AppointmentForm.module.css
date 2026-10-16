@@ -174,7 +174,7 @@
   font-size: var(--text-base);
   line-height: 1.6;
   margin-bottom: var(--space-6);
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .appointmentSummary {
