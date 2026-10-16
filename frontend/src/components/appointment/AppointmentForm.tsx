@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppointmentForm } from '../../hooks/useAppointmentForm';
 import { Button } from '../ui/Button';
+import { getWhatsAppLink } from '../../data/clinic';
 import type { DoctorId } from '../../types';
 import styles from './AppointmentForm.module.css';
 
@@ -81,7 +82,17 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
       {serverError && (
         <div className={styles.alertError} role="alert">
-          {serverError}
+          <p>{serverError}</p>
+          <a
+            href={getWhatsAppLink(
+              `Olá! Tentei solicitar agendamento pelo site. Meus dados:\n- Nome: ${values.name || 'Não informado'}\n- Médico: ${values.doctor === 'dra-fernanda-almeida' ? 'Dra. Fernanda Almeida' : values.doctor === 'dr-glauber-marinho' ? 'Dr. Glauber Marinho' : 'A alinhar'}\n- Interesse: ${values.interest || 'A alinhar'}`
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.errorWhatsappBtn}
+          >
+            Prefere concluir pelo WhatsApp? Clique aqui →
+          </a>
         </div>
       )}
 

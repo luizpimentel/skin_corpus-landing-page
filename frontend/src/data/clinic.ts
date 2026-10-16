@@ -20,9 +20,9 @@ export const CLINIC_DATA = {
 
   contact: {
     // Números e contatos da clínica
-    whatsappNumber: '5521999999999',
-    whatsappFormatted: '(21) 99999-9999',
-    phoneFormatted: '(21) 3500-0000',
+    whatsappNumber: '5521999006521',
+    whatsappFormatted: '(21) 99900-6521',
+    phoneFormatted: '(21) 99900-6521',
     email: 'contato@skincorpus.com.br',
   },
 

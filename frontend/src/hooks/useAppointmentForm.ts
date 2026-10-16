@@ -169,6 +169,37 @@ export function useAppointmentForm({
 
       setCreatedAppointment(response);
       setStatus('success');
+
+      // Dispara eventos de conversão de Lead para GTM, Meta Pixel e Analytics
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(
+          new CustomEvent('lead_generated', {
+            detail: {
+              name: values.name.trim(),
+              doctor: doctorName,
+              interest: values.interest.trim(),
+              period: formattedPeriod,
+              date: formattedDate,
+            },
+          })
+        );
+
+        if (typeof (window as any).fbq === 'function') {
+          (window as any).fbq('track', 'Lead', {
+            content_name: values.interest.trim(),
+            content_category: doctorName,
+          });
+        }
+
+        if (Array.isArray((window as any).dataLayer)) {
+          (window as any).dataLayer.push({
+            event: 'generate_lead',
+            lead_doctor: doctorName,
+            lead_interest: values.interest.trim(),
+          });
+        }
+      }
+
       onSuccess?.(response);
     } catch (err: any) {
       setStatus('error');
