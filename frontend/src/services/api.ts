@@ -1,6 +1,6 @@
 import type { AppointmentRequest, AppointmentResponse, ApiError } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://formspree.io/f/xljgakez';
 
 export async function createAppointment(
   data: AppointmentRequest
@@ -9,7 +9,7 @@ export async function createAppointment(
   const timeoutId = setTimeout(() => controller.abort(), 12000);
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/appointments`, {
+    const response = await fetch(API_BASE_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ import styles from './MedicalTeam.module.css';
 export const MedicalTeam: React.FC = () => {
   return (
     <section id="corpo-clinico" className={styles.section}>
-      <div className="container">
+      <div className="container" style={{ marginTop: '20px' }}>
         <Reveal animation="fadeUp">
           <SectionTitle
             badge="Excelência Médica"

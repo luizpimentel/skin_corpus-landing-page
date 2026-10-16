@@ -7,7 +7,7 @@ import styles from './Hero.module.css';
 export const Hero: React.FC = () => {
   const { openAppointment } = useAppointmentModal();
   const whatsappUrl = getWhatsAppLink(
-    'Olá! Estive no site da SkinCorpus e gostaria de agendar uma avaliação'
+    'Olá! Estive no site da Skin Corpus e gostaria de agendar uma avaliação'
   );
 
   return (

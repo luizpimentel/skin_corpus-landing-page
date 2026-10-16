@@ -18,6 +18,7 @@ dist-ssr
 
 # Backend
 backend/
+docker-compose.yml
 
 # Editor directories and files
 .vscode/*
